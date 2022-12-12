@@ -1,0 +1,13 @@
+{% extends 'app/base.html' %}
+{% block content %}
+<ul style="list-style-type: none">
+{% for req in room_requests %}
+<li>{{forloop.counter}}. {{req.tenant}} requested for {{req.room_name}} at {{req.location}} on {{req.req_date}}, the status of which is {{req.status}} </li>
+<form action="{% url 'requested' %}" method="POST" id="formSignup" enctype="multipart/form-data">
+    {% csrf_token %}
+    <input name="req_id" value={{req.req_id}} hidden>
+    <input type="submit" value="Book Room" id="mySubmit" class="login-button">
+</form>
+{% endfor %}
+</ul>
+{% endblock content %}

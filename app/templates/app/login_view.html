@@ -1,0 +1,94 @@
+{% extends 'app/base.html' %}
+{% block content %}
+{% load static %}
+    {% if message %}
+            
+    <!-- Modal content-->
+        <h4 >{{message}}</h4>
+    {% endif %}
+<div class="container-fluid">
+    <div class="login-signup">
+        <div class="signup">
+            <form action="{% url 'signup' %}" method="POST" id="formSignup">
+            {% csrf_token %}
+            <div class="sign-up">
+                <h4>Sign up</h4>
+                <input type="text" name="first"  placeholder="First Name*" id="first" required><br>
+                <input type="text" name="last" placeholder="Last Name*" id="last" required><br>
+                <input type="email" name="email" placeholder="Email *" id="email" required><br>
+                <input type="date" name="dob" placeholder="Date of birth *" id="dob" required><br>
+                <input type="tel" name="phone" placeholder="Phone no *" id="phone" required><br>
+                <input type="password" name="password" placeholder="Password *" id="pass1"><br>
+                <input type="password" placeholder="Confirm Password *" id="Cpass1" onkeyup="check1()"><br>         
+                <span id="message1"></span>  
+                <input type="submit" value="Sign up" id="mySubmit1" disabled >
+                <script>
+                    var check1=function()
+                            {
+                                pass=document.getElementById('pass1');
+                                cpass=document.getElementById('Cpass1');
+                                mess=document.getElementById('message1');
+                                first = document.getElementById('first');
+                                last = document.getElementById('last');
+                                email = document.getElementById('email').value;
+                                dob = document.getElementById('dob');
+                                phone = document.getElementById('phone').value;    
+                                
+                                if(email.match(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/))
+                                {
+                                    if(phone.match(/[0-9]{10}/g))
+                                    {
+                                        if(pass.value==cpass.value)
+                                        {
+                                            mess.style.color='green';
+                                            mess.innerHTML='Passwords Match';
+                                            document.getElementById("mySubmit1").disabled = false;
+                                        }
+                                        else
+                                        {
+                                            mess.style.color='red';
+                                            mess.innerHTML="Passwords Don't Match";
+                                            document.getElementById("mySubmit1").disabled = true;
+                                
+                                        }
+                                    }
+                                    else{
+                                        mess.style.color='red';
+                                        mess.innerHTML="Please Enter valid phone no";
+                                        document.getElementById("mySubmit1").disabled = true;
+                                    }
+                                }
+                                else{
+                                    mess.style.color='red';
+                                    mess.innerHTML="Please Enter valid Email";
+                                    document.getElementById("mySubmit1").disabled = true;
+                                }
+                                
+                                
+                            }
+
+                </script>
+            </div>
+        </div>
+            
+
+            
+        </form>
+        <div class="login">
+            <form action="{% url 'login' %}" method="POST" id="formLogin">
+            {% csrf_token %}
+            <div class="log-in">
+                <h4>Log In</h4>
+                <input type="text" name="username"  placeholder="Email*"><br>
+                <input type="password" name="password" placeholder="Password *" id="pass"><br> 
+                <input type="submit" value="Log In" id="mySubmit">
+                
+            </div>
+        </div>
+            
+
+            
+        </form>
+    </div>
+</div>
+{% endblock content %}

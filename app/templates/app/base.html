@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Book Hotels</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="{% static 'app/CSS/Style.css'%}">
+    <link rel="stylesheet" type="text/css" href="{% static 'app/CSS/style-min.css' %}">
+</head>
+<body>
+    <nav class="navbar navbar-default navi">
+        <div class="body-container">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <div class="navigation-right-buttons ">
+                        <div class="navigation-right-contatiner">
+                            <button type="button" class="navbar-toggle navbutton "
+                                id="navi-button" onclick="openNavigation()">
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                            </button>
+                        </div>
+                        
+                    </div>
+                    <a class="navbar-brand" href="/"><img src="{% static 'app/Icons/Book Hotels (2).png' %}"
+                            class="edha_express_logo"></a>
+                </div>
+                <div class="navbar-right right-navi navigation-right-buttons">
+                    <div class="navigation-right-contatiner">
+                        <ul class="nav navbar-nav noshow" id="list-icons">
+                            {% if not user.username %}
+                            <li><a href="/signup_view">Signup/Login</a></li>
+                            {% endif %}
+                            {% if landlord %}
+                            
+                            <li data-toggle="modal"
+                            data-target="#myModal"><a href="#">Post Ad</a></li>
+                            <li><a href="/manage_rooms">Manage Ad</a></li>
+                            <li><a href="/requested">View Requests</a></li>
+                            {% endif %}
+                            {% if tenant %}
+                            <li><a href="/my_requests">My Requests</a></li>
+                            {% endif %}
+                            <li><a href="/request_room">Rooms</a></li>
+                        </ul>
+                        <div id="myModal" class="modal fade" role="dialog">
+                            <div class="modal-dialog">
+                        
+                            <!-- Modal content-->
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                <h4 class="modal-title">Post An Ad</h4>
+                                </div>
+                                <div class="modal-body">
+                                    <form action="{% url 'make_room' %}" method="POST" id="formSignup" enctype="multipart/form-data">
+                                        {% csrf_token %}
+                                        Room Name: <input type="text" name="name" placeholder="eg: B31"><br>
+                                        Location: <input type="text" name="location" placeholder="eg: Lazimpat"><br>
+                                        Facilities: <input type="text" name="facilities" placeholder="eg: Attach "><br>
+                                        Price: Rs <input type="number" name="price" placeholder="500" value=500><br>
+                                        Photo: <input type="file" name='images'>
+                                        <input type="submit" value="Post Ad" id="mySubmit" class="login-button">
+                                    </form>
+                                </div>
+                                <div class="modal-footer">
+                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                </div>
+                            </div>
+                        
+                            </div>
+                        </div>
+                        {% if user.is_authenticated %}
+                                {% if not_verified %} 
+                                    <div class="logger noshow">
+                                        {{user.username}} 
+                                        <a data-toggle="modal" data-target="#verifyModal">
+                                        <div>Verify your account</div></a>
+                                        <a href="/logout">
+                                            <div>
+                                                
+                                                Logout
+                                            </div>
+                                        </a>
+                                    </div>
+                                {% else %}
+                                    <div class="logger noshow">
+                                        {{user.username}} 
+                                        <a href="/logout">
+                                            <div>
+
+                                                Logout
+                                            </div>
+                                        </a>
+                                    </div>
+                                {% endif %}
+                            {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+    {% block content %}
+    {% endblock %}

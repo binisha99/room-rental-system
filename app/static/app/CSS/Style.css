@@ -1,0 +1,328 @@
+.container-div{
+    margin: 0 auto;
+    width: 80%;
+}
+.carousel-inner>.item>a>img, .carousel-inner>.item>img {
+
+    width: 100%;
+}
+.image{
+    
+}
+.carousel-inner{
+    height: 84vh;
+}
+.navbar-default {
+    margin-bottom: 1px;
+}
+.carousel-head{
+    text-align: center;
+    font-size: 28px;
+    font-style: italic;
+    margin-bottom: 25px;
+}
+.navigation-bar{
+    background-color: #1f739b;
+}
+
+.edha_express_logo{
+    width: 125px;
+}
+.navbar-brand{
+    height: auto;
+}
+
+.navigation-right-buttons{
+    display: table;
+    position: absolute;
+    right: 2%;
+    top: 0%;
+    height: 100%;
+    
+}
+.navigation-right-buttons ul{
+    font-size: 19px;
+}
+.navigation-right-contatiner{
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.navbar-default .navbar-nav>li>a {
+    color: #fff;
+}
+#icon1:hover{
+    color:#ddd;
+}
+#tool{
+    color:#ddd;
+}
+.logger>a{
+    color: #f5e072;
+}
+.logger{
+    color: #fff;
+    text-align: right;
+}
+.login-button{
+    background: #1f7299;
+    color: #fff;
+    border: 1px solid transparent;
+    border-radius: 2px;
+}
+.login-button:hover{
+    background: #185876;
+    color: #ddd;
+}
+.navbar-default .navbar-nav>li>a:focus, .navbar-default .navbar-nav>li>a:hover {
+    color: #ddd;
+    background-color: transparent;
+}
+.inv{
+    display: none;
+}
+.inp-signup{
+    margin-bottom: 10px;
+}
+th{
+    text-align: center;
+}
+#tool{
+    position: absolute;
+    visibility: hidden;
+    width: 200px;
+    text-align: center;
+    top: 2px;
+}
+.caro-div{
+
+    margin-bottom: 40px;
+}
+.about_us{
+    padding: 20px 0;
+    background-color: #1f739b;
+    color: white;
+}
+.about_us_table{
+    display: grid;
+    grid-template-columns: 70% 28%;
+    grid-column-gap: 2%;
+}
+.about_us_content{
+    margin: 20px 0;
+
+}
+.about_us_image_container{
+    width: fit-content;
+    float: right;
+    border-radius: 50%;
+    overflow: hidden;
+    background-color: white;
+}
+.about_us_image{
+    width: 200px;
+}
+.contact_us_table{
+    display: grid;
+    grid-template-columns: 22% 34% 40%;
+    grid-column-gap: 2%;
+}
+.edha_express_logo_contact{
+    width: 75px;
+}
+.contact-us
+{
+    text-align: center;
+    color: #1f739b;
+    font-size: 17px;
+    font-weight: bold;
+}
+.body-container{
+    background: #00000003;
+}
+#myNavbar{
+    display: none;
+    background: #f5f5f5;
+    border-bottom: 1px solid #ececec;
+    
+    padding: 5px 20px;
+    font-size: 16px;
+}
+#myNavbar ul{
+    list-style: none;
+    padding: 0px;
+    
+}
+.mob_tools{
+    margin: 2px 0;
+    margin-right: 10px;
+}
+.mobile_abt_us{
+    display: none;
+}
+.abt_us{
+    display: block;
+}
+.login-signup{
+    display: grid;
+    grid-template-columns: 50% 50%;
+    height: 85vh;
+    margin-top: 7px;
+    background-image: url(../Images/back1.jpg);
+}
+.centered{
+    text-align: center;
+}
+.signup{
+    position: relative;
+    background: #1f7299bd;
+}
+.signup-text{
+    color: #fff;
+    font-size: 24px;
+}
+.login{
+    position: relative;
+    background: #9d9fa08f;
+}
+.login-text{
+    font-size: 24px;
+}
+.signup-form{
+    position: absolute;
+    top: 20%;
+    left: 30%;
+}
+.scrollable{
+    height: 82vh;
+    overflow: scroll;
+}
+.information{
+    display: grid;
+    grid-template-columns: 50% 50%;
+    margin-bottom: 30px;
+}
+.more_info{
+    display: grid;
+    grid-template-columns: 50% 50%;
+    margin-bottom: 30px;
+}
+.pickup{
+    display: none;
+}
+
+.navi{
+    background: #1f739b;
+    border-radius: 0%;
+    border: 1px solid transparent;
+}
+.floater-icon-con{
+    position: fixed;
+    right: 10px;
+    bottom: 10px;
+    opacity: 0.8;
+}
+.floater-icon{
+    border-radius: 50%;
+    border: 1px solid #1f739b;
+    background: #fff;
+    width: fit-content;
+    line-height: 0;
+    box-shadow: 5px 5px 5px 0px;
+}
+.floater-text{
+    display: none;
+    text-align: center;
+    color: #000;
+    background: #ffffff;
+    border: 1px solid #000;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    box-shadow: 2px 2px 2px 0px;
+    
+}
+.floater-gly{
+    font-size: 80px;
+    border-radius: 50%;
+    border: 1px solid #ffffff;
+    color: #1f739b;
+    top: 0.5px;
+    left: 0.2px;
+}
+.floater-icon-con:hover{
+    
+    opacity: 1;
+    cursor: pointer;
+}
+.floater-icon-con:hover .floater-text{
+    display: block;
+}
+.floater-icon-con:hover .floater-icon{
+    box-shadow: 2px 2px 2px 0px;
+}
+.copyclip:hover{
+    cursor: pointer;
+}
+
+.room-grid{
+    display: grid;
+    grid-template-columns: 2% 40% 50%;
+    grid-column-gap: 2%;
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+@media screen and (max-width: 915px) {
+    #myNavbar{
+        padding-top: 15px;
+        display: grid;
+        visibility: hidden;
+        height: 0vh;
+        transition: height 2s;
+        grid-template-columns: 48% 48%;
+        grid-column-gap: 2%;
+        
+        background: #1f739b;
+    }
+    #myNavbar>ul>li>a{
+        color: #fff;
+    }
+    .navbar-default .navbar-toggle {
+        border-color: #fff;
+    }
+    .navbar-default .navbar-toggle:focus, .navbar-default .navbar-toggle:hover {
+        background-color: unset;
+    }
+    .carousel-inner{
+        height: unset;
+    }
+    .about_us_table{
+        display: block;
+    }
+    .abt_us{
+        display: none;
+    }
+    .mobile_abt_us{
+        display: block;
+    }
+    .about_us_image_container {
+        float: none;
+        margin: 0 auto;
+    }
+    .login-signup{
+        display: block;
+    }
+    .information{
+        display: block;
+    }
+    .more_info{
+        display: block;
+    }
+    .navbar-default .navbar-toggle .icon-bar {
+        background-color: #fff;
+    }
+
+    .floater-icon-con {
+        bottom: 25px;
+        opacity: 0.3;
+    }
+  }

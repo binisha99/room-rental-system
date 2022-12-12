@@ -1,0 +1,9 @@
+{% extends 'app/base.html' %}
+{% block content %}
+<ul style="list-style-type: none">
+{% for req in room_requests %}
+<li>{{forloop.counter}}. You requested for {{req.room_name}} at {{req.location}} on {{req.req_date}}, the status of which is {{req.status}} </li>
+
+{% endfor %}
+</ul>
+{% endblock content %}

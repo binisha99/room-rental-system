@@ -1,0 +1,29 @@
+{% extends 'app/base.html' %}
+{% block content %}
+{% for room in rooms %}
+<div class="container-div">
+<form action="{% url 'request_room' %}" method="POST" id="formSignup" enctype="multipart/form-data">
+    {% csrf_token %}
+    <div class="room-grid">
+        <div>{{forloop.counter}}</div>
+        <div>
+            <input name="id" value={{room.id}} hidden>
+            Room Name: {{room.name}}<br>
+            Location: {{room.location}}<br>
+            Facilities: {{room.facilities}}<br>
+            Price: Rs {{room.price}}<br>
+            
+            <input type="submit" value="Request" id="mySubmit" class="login-button">
+        </div>
+        <div >
+            <img src="{{room.photos}}/aa.jpg" style="width:500px;"><br>
+            
+            
+        </div> 
+        
+    </div>
+</form>
+</div>
+{% endfor %}
+{% endblock content %}
+

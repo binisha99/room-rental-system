@@ -1,0 +1,43 @@
+{% extends 'app/base.html' %}
+{% block content %}
+{% for room in rooms %}
+<div class="container-div">
+
+    <div class="room-grid">
+        <div>{{forloop.counter}}</div>
+        <div>
+            <form action="{% url 'manage_rooms' %}" method="POST" id="formSignup" enctype="multipart/form-data">
+            {% csrf_token %}
+            <input name="id" value={{room.id}} hidden>
+            Status: {{room.status}}<br>
+            Room Name: <input type="text" placeholder="{{room.name}}" name="name" value="{{room.name}}"><br>
+            Location: <input type="text" name="location" placeholder="{{room.location}}" value="{{room.location}}"><br>
+            Facilities: <input type="text" name="facilities" placeholder="{{room.facilities}}" value="{{room.facilities}}"><br>
+            Price: Rs <input type="number" name="price" placeholder="{{room.price}}" value={{room.price}}><br>
+            Photo: <input type="file" name='images'><br>
+            
+            <input type="submit" value="Make Changes" id="mySubmit" class="login-button">
+            </form><br>
+            <form action="{% url 'clear_room' %}" method="POST" id="formSignup" enctype="multipart/form-data">
+            {% csrf_token %}
+            <input name="id" value={{room.id}} hidden>
+            {% if room.status == "Empty"%}
+            <input type="submit" style="background: gray; color: white" value="Clear Room" id="mySubmit" class="login-button" disabled>
+            {% else %}
+            <input type="submit" value="Clear Room" id="mySubmit" class="login-button">
+            {% endif %}
+            
+            </form>
+        </div>
+        <div >
+            <img src="{{room.photos}}/aa.jpg" style="width:200px;"><br>
+            
+            
+        </div> 
+        
+    </div>
+
+</div>
+{% endfor %}
+{% endblock content %}
+
